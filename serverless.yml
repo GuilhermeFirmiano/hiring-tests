@@ -7,4 +7,14 @@ functions:
   arrayChallenge:
     handler: handler.handler
     events:
-      - sns: array-challenge
+      - sqs:
+        arn:
+          Fn::GetAtt:
+            - receiverQueue
+            - Arn
+resources:
+  Resources:
+    array-challenge:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: array-challenge

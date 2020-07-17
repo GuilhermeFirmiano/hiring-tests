@@ -2,12 +2,13 @@
 
 module.exports.handler = async event => {
   try {
-    const message = event.Records[0].Sns.Message;
+    for (const record of event.Records) {
 
-    //parse string to JSON
-    var obj = JSON.parse(message);
+      //parse string to JSON
+      var obj = JSON.parse(record.body);
 
-    return await this.bothElements(obj.arr1, obj.arr2);
+      return await this.bothElements(obj.arr1, obj.arr2);
+    }
   } catch (error) {
     return error
   }
