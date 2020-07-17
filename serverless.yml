@@ -9,11 +9,11 @@ functions:
     events:
       - sns:
         arn: !Ref SuperTopic
-        topicName: arrayChallenge
+        topicName: MyCustomTopic
 
 resources:
   Resources:
     SuperTopic:
       Type: AWS::SNS::Topic
       Properties:
-        TopicName: arrayChallenge
+        TopicName: MyCustomTopic
