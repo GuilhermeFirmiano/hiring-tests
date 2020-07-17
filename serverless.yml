@@ -4,7 +4,7 @@ provider:
   runtime: nodejs12.x
   memorySize: 256
 functions:
-  arrayChallenge:
+  challenge:
     handler: handler.handler
     events:
       - sns:
