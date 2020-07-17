@@ -1,7 +1,5 @@
 'use strict';
 
-const AWS = require('aws-sdk')
-
 module.exports.handler = async event => {
   const body = event
 
