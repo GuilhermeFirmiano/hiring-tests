@@ -7,9 +7,14 @@ module.exports.handler = async event => {
       //parse string to JSON
       var obj = JSON.parse(record.body);
 
-      return await this.bothElements(obj.arr1, obj.arr2);
+      var result = await this.bothElements(obj.arr1, obj.arr2);
+
+      console.log(result);
+
+      return result
     }
   } catch (error) {
+    console.log(error);
     return error
   }
 };
