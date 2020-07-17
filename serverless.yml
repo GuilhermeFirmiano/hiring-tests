@@ -3,12 +3,6 @@ provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - sqs:SendMessage
-      Resource:
-        - Fn::GetAtt: [ arrayChallenge, Arn ]
 functions:
   arrayChallenge:
     handler: handler.handler
@@ -18,9 +12,10 @@ functions:
             Fn::GetAtt:
               - arrayChallenge
               - Arn
+              
 resources:
   Resources:
     arrayChallenge:
-      Type: AWS::SQS::Queue
+      Type: "AWS::SQS::Queue"
       Properties:
-        QueueName: arrayChallengec
+        QueueName: "arrayChallenge"
