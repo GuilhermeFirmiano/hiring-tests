@@ -14,10 +14,10 @@ functions:
     handler: handler.handler
     events:
       - sqs:
-        arn:
-          Fn::GetAtt:
-            - arrayChallenge
-            - Arn
+          arn:
+            Fn::GetAtt:
+              - arrayChallenge
+              - Arn
 resources:
   Resources:
     arrayChallenge:
