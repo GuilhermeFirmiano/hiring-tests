@@ -90,9 +90,8 @@ workflows:
             branches:
               only:
                 - master
-
+                
       - deploy:
-          context: LIVE
           requires:
             - release-vesion
           filters:
