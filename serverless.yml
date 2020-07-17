@@ -3,6 +3,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - sqs:SendMessage
+      Resource:
+        - Fn::GetAtt: [ challenge, Arn ]
 functions:
   challenge:
     handler: handler.handler
