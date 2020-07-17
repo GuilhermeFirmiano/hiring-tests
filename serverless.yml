@@ -7,8 +7,13 @@ functions:
   arrayChallenge:
     handler: handler.handler
     events:
-      - sqs:
-          arn:
-            Fn::GetAtt:
-              - arrayChallenge
-              - Arn
+      - sns:
+        arn: !Ref SuperTopic
+        topicName: arrayChallenge
+
+resources:
+  Resources:
+    SuperTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: arrayChallenge
