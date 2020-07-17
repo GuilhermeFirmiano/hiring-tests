@@ -10,11 +10,11 @@ functions:
       - sqs:
         arn:
           Fn::GetAtt:
-            - array-challenge
+            - arrayChallenge
             - Arn
 resources:
   Resources:
     array-challenge:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: array-challenge
+        QueueName: arrayChallenge
