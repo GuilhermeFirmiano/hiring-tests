@@ -12,10 +12,3 @@ functions:
             Fn::GetAtt:
               - arrayChallenge
               - Arn
-              
-resources:
-  Resources:
-    arrayChallenge:
-      Type: "AWS::SQS::Queue"
-      Properties:
-        QueueName: "arrayChallenge"
