@@ -10,7 +10,7 @@ functions:
       - sqs:
         arn:
           Fn::GetAtt:
-            - receiverQueue
+            - array-challenge
             - Arn
 resources:
   Resources:
