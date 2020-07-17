@@ -14,7 +14,7 @@ functions:
             - Arn
 resources:
   Resources:
-    array-challenge:
+    arrayChallenge:
       Type: AWS::SQS::Queue
       Properties:
         QueueName: arrayChallenge
