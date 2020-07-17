@@ -1,5 +1,20 @@
 'use strict';
 
+const AWS = require('aws-sdk')
+
+module.exports.handler = async event => {
+  const body = event
+
+  console.log(body);
+
+  try {
+    return await this.bothElements([], []);
+  } catch (error) {
+    return error
+  }
+};
+
+
 module.exports.bothElements = async (arr1, arr2) => {
   let arryAux = Array()
 
@@ -13,14 +28,3 @@ module.exports.bothElements = async (arr1, arr2) => {
   //sorts elements from smallest to largest
   return arryAux.sort((a, b) => a - b);
 }
-
-
-module.exports.arrayChallenge = async event => {
-  const body = event
-
-  try {
-    return await this.bothElements(a, b);
-  } catch (error) {
-    return error
-  }
-};
