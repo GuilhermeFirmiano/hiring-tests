@@ -6,7 +6,7 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - sqs:SendMessage
+        - sqs:*
       Resource:
         - Fn::GetAtt: [ challenge, Arn ]
 functions:
