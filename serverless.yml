@@ -7,5 +7,4 @@ functions:
   arrayChallenge:
     handler: handler.handler
     events:
-      - sns:
-        arn: arn:aws:sns:us-east-1:407804843649:array-challenge
+      - sns: array-challenge

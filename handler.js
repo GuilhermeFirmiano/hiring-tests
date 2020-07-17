@@ -1,12 +1,13 @@
 'use strict';
 
 module.exports.handler = async event => {
-  const body = event
-
-  console.log(body);
-
   try {
-    return await this.bothElements([], []);
+    const message = event.Records[0].Sns.Message;
+
+    //parse string to JSON
+    var obj = JSON.parse(message);
+
+    return await this.bothElements(obj.arr1, obj.arr2);
   } catch (error) {
     return error
   }
