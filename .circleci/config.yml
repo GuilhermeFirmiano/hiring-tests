@@ -75,7 +75,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            sls deploy
+            sls deploy -v
 
 workflows:
   version: 2
@@ -90,7 +90,7 @@ workflows:
             branches:
               only:
                 - master
-                
+
       - deploy:
           requires:
             - release-vesion

@@ -7,13 +7,15 @@ functions:
   challenge:
     handler: handler.handler
     events:
-      - sns:
-        arn: !Ref SuperTopic
-        topicName: MyCustomTopic
+      - sqs:
+        arn:
+          Fn::GetAtt:
+            - challenge
+            - Arn
 
 resources:
   Resources:
-    SuperTopic:
-      Type: AWS::SNS::Topic
+    challenge:
+      Type: AWS::SQS::Queue
       Properties:
-        TopicName: MyCustomTopic
+        QueueName: challenge
